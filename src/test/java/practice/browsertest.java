@@ -15,11 +15,12 @@ public class browsertest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
-		//driver.findElement(By.id("small-searchterms")).sendKeys("iphone13");
+		driver.findElement(By.id("small-searchterms")).sendKeys("iphone13");
 		List<WebElement>links=driver.findElements(By.xpath("//div[@class='footer-upper']//a"));
 		System.out.println("Number of list elements : "+links.size());
 for(WebElement ele:links) {
 	System.out.println(ele.getText());
+	System.out.println(links.indexOf(ele));
 }
 	}
 
